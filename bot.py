@@ -50,28 +50,7 @@ ACTIVITY_POINTS = {
 
 # รายชื่อเริ่มต้น ใช้ตอนยังไม่เคยมีไฟล์ data มาก่อน (แก้/เพิ่ม/ลบทีหลังได้ด้วย /setplayers, /addplayer, /renameplayer)
 DEFAULT_PLAYERS = sorted([
-    "Mayom Sync",
-    "Highflex Diff",
-    "Kim Stylepro",
-    "Jingjing Hydra",
-    "Lufer DOO",
-    "Isawyouhappy Seqt",
-    "Kamil Semipro",
-    "Taro Young",
-    "Park Justletmeknow",
-    "ZynX Stark",
-    "NamChai LBkazo",
-    "Marin Cassano",
-    "Ped Dieharrd",
-    "Korn Sentai",
-    "Perk Justletmeknow",
-    "NongkaKidofrap Nowaja",
-    "Adas Add",
-    "Untouchable One",
-    "Haider Dara",
-    "Yumi Missyu",
-    "Tatar Young",
-    "iPhone Samsung",
+    "Zen Stark",
 ])
 
 # ---------- โหลด / บันทึกข้อมูล ----------
