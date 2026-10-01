@@ -3,11 +3,11 @@ Discord Bot: ระบบส่งรูปหลักฐาน (Loop/Airdrop) 
 ------------------------------------------------------------
 วิธีทำงาน:
 1. แอดมินตั้งค่ารายชื่อผู้เล่นทั้งหมดไว้ล่วงหน้าด้วย /setplayers (วางทีเดียวทั้งลิสต์) หรือ /addplayer (เพิ่มทีละคน)
-2. ผู้เล่นพิมพ์ /submit เลือกกิจกรรม (/Airdrop/BMK/Skyfall/BlackMarket) + แนบรูปภาพ + พิมพ์ชื่อผู้เล่นได้สูงสุด 10 ช่อง
+2. ผู้เล่นพิมพ์ /loop เลือกกิจกรรม (/Airdrop/BMK/Skyfall/BlackMarket) + แนบรูปภาพ + พิมพ์ชื่อผู้เล่นได้สูงสุด 10 ช่อง
    (แต่ละช่องพิมพ์บางส่วนของชื่อแล้วบอทจะเดาชื่อเต็มจากลิสต์ให้เลือกได้เลย เหมือนตอนใช้ /score)
 3. บอทจะส่งข้อความ (embed) ไปที่ "ห้องตรวจสอบ" พร้อมปุ่ม อนุมัติ / ปฏิเสธ แสดงรายชื่อทั้งหมดที่กรอกมา
 4. แอดมินกดปุ่มอนุมัติครั้งเดียว -> ระบบบวกแต้มให้ "ทุกชื่อ" ตามจำนวนแต้มของกิจกรรมนั้น
-5. ใช้ /score เช็คแต้มของชื่อใดชื่อหนึ่ง, /leaderboard ดูอันดับ, /addscore ให้แอดมินปรับแต้มมือ
+5. ใช้ /score เช็คแต้มของชื่อใดชื่อหนึ่ง, /scoreboard ดูอันดับ, /addscore ให้แอดมินปรับแต้มมือ
 
 ข้อมูลถูกเก็บในไฟล์ data/scores.json (ไม่ต้องใช้ฐานข้อมูลภายนอก)
 """
@@ -224,7 +224,6 @@ async def player_name_autocomplete(interaction: discord.Interaction, current: st
     name10="ผู้เล่นคนที่ 10 (ถ้ามี)",
 )
 @app_commands.choices(activity=[
-    app_commands.Choice(name="Loop", value="Loop"),
     app_commands.Choice(name="Airdrop", value="Airdrop"),
     app_commands.Choice(name="BMK", value="BMK"),
     app_commands.Choice(name="Skyfall", value="Skyfall"),
