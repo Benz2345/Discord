@@ -3,7 +3,7 @@ Discord Bot: ระบบส่งรูปหลักฐาน (Loop/Airdrop) 
 ------------------------------------------------------------
 วิธีทำงาน:
 1. แอดมินตั้งค่ารายชื่อผู้เล่นทั้งหมดไว้ล่วงหน้าด้วย /setplayers (วางทีเดียวทั้งลิสต์) หรือ /addplayer (เพิ่มทีละคน)
-2. ผู้เล่นพิมพ์ /submit เลือกกิจกรรม (Loop/Airdrop/BMK/Skyfall/BlackMarket) + แนบรูปภาพ + พิมพ์ชื่อผู้เล่นได้สูงสุด 10 ช่อง
+2. ผู้เล่นพิมพ์ /submit เลือกกิจกรรม (/Airdrop/BMK/Skyfall/BlackMarket) + แนบรูปภาพ + พิมพ์ชื่อผู้เล่นได้สูงสุด 10 ช่อง
    (แต่ละช่องพิมพ์บางส่วนของชื่อแล้วบอทจะเดาชื่อเต็มจากลิสต์ให้เลือกได้เลย เหมือนตอนใช้ /score)
 3. บอทจะส่งข้อความ (embed) ไปที่ "ห้องตรวจสอบ" พร้อมปุ่ม อนุมัติ / ปฏิเสธ แสดงรายชื่อทั้งหมดที่กรอกมา
 4. แอดมินกดปุ่มอนุมัติครั้งเดียว -> ระบบบวกแต้มให้ "ทุกชื่อ" ตามจำนวนแต้มของกิจกรรมนั้น
@@ -27,7 +27,6 @@ ADMIN_ROLE_NAME = os.getenv("ADMIN_ROLE_NAME", "")  # เว้นว่าง�
 
 # ห้องตรวจสอบแยกตามกิจกรรม ตั้งค่า ID ห้องของแต่ละกิจกรรมใน .env
 ACTIVITY_CHANNELS = {
-    "Loop": int(os.getenv("REVIEW_CHANNEL_LOOP", "0")),
     "Airdrop": int(os.getenv("REVIEW_CHANNEL_AIRDROP", "0")),
     "BMK": int(os.getenv("REVIEW_CHANNEL_BMK", "0")),
     "Skyfall": int(os.getenv("REVIEW_CHANNEL_SKYFALL", "0")),
@@ -41,11 +40,10 @@ os.makedirs(DATA_DIR, exist_ok=True)
 
 # แต้มที่ได้ต่อกิจกรรม (ปรับตัวเลขตรงนี้ได้ตามต้องการ)
 ACTIVITY_POINTS = {
-    "Loop": 1,
     "Airdrop": 3,
     "BMK": 2,
     "Skyfall": 2,
-    "BlackMarket": 2,
+    "BlackMarket": 1,
 }
 
 # รายชื่อเริ่มต้น ใช้ตอนยังไม่เคยมีไฟล์ data มาก่อน (แก้/เพิ่ม/ลบทีหลังได้ด้วย /setplayers, /addplayer, /renameplayer)
